@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1643472194 source:x:\files\programming\c\Škola\bank\bank-1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Matrix.h"
+
+1643468566 x:\files\programming\c\Škola\bank\bank-1\matrix.h
+	<stdio.h>
+	<stdbool.h>
+
+1643472034 source:x:\files\programming\c\Škola\bank\bank-1\matrix.c
+	"Matrix.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
