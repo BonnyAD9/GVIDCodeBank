@@ -55,4 +55,4 @@ dkms.conf
 *.depend
 *.layout
 *.save
-Bank-1_build_log.html
+*log.html
