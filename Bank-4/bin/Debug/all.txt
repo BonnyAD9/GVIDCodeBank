@@ -1,2 +1,0 @@
-nazev 1              10.000000 no
-druhy nazev          5.300000 yes

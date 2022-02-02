@@ -1,2 +1,0 @@
-nazev 1              10 no
-druhy nazev          5.3 yes
