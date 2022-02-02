@@ -56,3 +56,5 @@ dkms.conf
 *.layout
 *.save
 *log.html
+**/bin/
+**/obj/
