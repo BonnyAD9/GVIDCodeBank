@@ -15,4 +15,4 @@ doWhile = "do" , "{" , ? code ? , "}" , "while" , "(" , ? podmínka ? , ")" , ";
 
 (*==========<<for>>==========*)
 
-for = "for" , "(" , [ ? inicializace ? ] , ";" , [ podmínka ] , ";" , [ update ] , ")" , "{" , ? code ? , "}" ;
+for = "for" , "(" , [ ? inicializace ? ] , ";" , [ ? podmínka ? ] , ";" , [ ? update ? ] , ")" , "{" , ? code ? , "}" ;
