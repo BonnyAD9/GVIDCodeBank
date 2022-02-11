@@ -1,0 +1,18 @@
+(*========<<if-else>>========*)
+
+ifElse = "if" , "(" , ? podmínka ? , ")" , "{" , ? code ? , "}" , [ "else" , "{" , ? code ? , "}" ] ;
+
+
+(*=========<<while>>=========*)
+
+while = "while" , "(" , ? podmínka ? , ")" , "{" , ? code ? , "}" ;
+
+
+(*========<<do-while>>=======*)
+
+doWhile = "do" , "{" , ? code ? , "}" , "while" , "(" , ? podmínka ? , ")" , ";" ;
+
+
+(*==========<<for>>==========*)
+
+for = "for" , "(" , [ ? inicializace ? ] , ";" , [ podmínka ] , ";" , [ update ] , ")" , "{" , ? code ? , "}" ;

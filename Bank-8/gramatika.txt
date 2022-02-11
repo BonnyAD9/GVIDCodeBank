@@ -1,0 +1,13 @@
+G = (N, Σ, P, S)
+
+N = { F, B }
+Σ = { a, b }
+P:  F -> b
+    F -> baB
+    B -> aB
+    B -> b
+S = F
+
+
+Typ: regulární (pravá)
+    - na pravé straně je vždy jen terminál nebo nejdříve terminály a až pak neterminál
