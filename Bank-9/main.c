@@ -10,6 +10,7 @@
 #include <string.h>
 
 bool generateSentace(char** rules, int ruleCount, int depth, char first);
+bool isTerminal(char** rules, int ruleCount, int ruleIndex);
 int indexOfAnyStartsWith(char** strs, int strCount, char c);
 int ruleType(char* rule, char* nonterminals);
 int countAny(char* str, char* chars);
@@ -40,7 +41,7 @@ int main()
         printf("Regular grammar\n");
         break;
     default:
-        printf("Invalid grammar");
+        printf("Invalid grammar\n");
         break;
     }
 
@@ -58,8 +59,15 @@ int main()
     {
         printf("%c->%s\n", rules[i][0], &rules[i][1]);
     }
-    printf("generation:\n");
-    const int depth = 5;
+    printf("Enter max depth to generate: ");
+    int depth = -1;
+    scanf("%d", &depth);
+    clearIn();
+    if (depth < 0)
+    {
+        printf("invalid value\n");
+        return EXIT_FAILURE;
+    }
     for (int i = 1; i <= depth; i++)
     {
         printf("%d: ", i);
@@ -87,14 +95,47 @@ bool generateSentace(char** rules, int ruleCount, int depth, char first)
         return false;
     }
 
+    bool isNext = isTerminal(rules, ruleCount, index);
+    int terminalIndex = index;
+    if (index + 1 != ruleCount)
+    {
+        terminalIndex = indexOfAnyStartsWith(&rules[index + 1], ruleCount - index - 1, first);
+        if (terminalIndex < 0)
+        {
+            terminalIndex = index;
+        }
+        else
+        {
+            terminalIndex += index + 1;
+            isNext = true;
+        }
+    }
+
+    if (isNext && depth == 1)
+    {
+        index = terminalIndex;
+    }
+
     for (char* str = &rules[index][1]; *str; str++)
     {
         if (indexOfAnyStartsWith(rules, ruleCount, *str) >= 0)
         {
-            generateSentace(rules, ruleCount, depth - 1, *str);
+            generateSentace(rules, ruleCount, depth - isNext, *str);
             continue;
         }
         printf("%c", *str);
+    }
+    return true;
+}
+
+bool isTerminal(char** rules, int ruleCount, int ruleIndex)
+{
+    for (char* c = &rules[ruleIndex][1]; *c; c++)
+    {
+        if (indexOfAnyStartsWith(rules, ruleCount, *c) >= 0)
+        {
+            return false;
+        }
     }
     return true;
 }

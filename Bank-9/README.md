@@ -19,10 +19,10 @@ S->aA
 A->bB
 B->cA
 B->c
-generation:
-1: aA
-2: abB
-3: abcA
-4: abcbB
-5: abcbcA
+Enter max depth to generate: 5
+1: abc
+2: abcbc
+3: abcbcbc
+4: abcbcbcbc
+5: abcbcbcbcbc
 ```
