@@ -8,21 +8,23 @@ získat od uživatele (ze vstupu nebo z parametrů příkazového řádku).
 
 ## Output
 
-### users.txt
+### Users
+
+#### users.txt
 ```
 f16a Petr
 586d Hana
 cf5a Tonda
 ```
 
-### emails.txt
+#### emails.txt
 ```
 f16a petr.bajza@gmail.com
 586d hana.best@gmail.com
 f16a jumbo@outlook.cz
 ```
 
-### Console
+#### Console
 ```
 PS > .\bank-13 user Petr users.txt emails.txt
 petr.bajza@gmail.com
@@ -33,4 +35,32 @@ hana.best@gmail.com
 user Hana with id f16a has 1 email adress
 PS > .\bank-13 user Tonda users.txt emails.txt
 user Tonda with id f16a has no email adress
+```
+
+### Vulcanos
+
+#### vulcs.txt
+```
+vulcano1 125 yes
+vulcano2 15 yes
+vulcano3 86 no
+vulcano4 18 yes
+vulcano5 96 no
+vulcano6 97 no
+vulcano7 28 yes
+```
+
+#### Console
+```
+PS > .\bank-13 vulcanos vulcs.txt above-avg inactive
+vulcano3 86.000000 no
+vulcano5 96.000000 no
+vulcano6 97.000000 no
+PS > .\bank-13 vulcanos vulcs.txt above-avg active
+vulcano1 125.000000 yes
+PS > .\bank-13 vulcanos vulcs.txt below-avg inactive
+PS > .\bank-13 vulcanos vulcs.txt below-avg active
+vulcano2 15.000000 yes
+vulcano4 18.000000 yes
+vulcano7 28.000000 yes
 ```
