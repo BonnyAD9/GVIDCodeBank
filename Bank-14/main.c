@@ -116,6 +116,7 @@ int main(void)
         printf("couldn't read path\n");
         return EXIT_FAILURE;
     }
+    clearIn();
     f = fopen(path, "r");
     if (!f)
     {
